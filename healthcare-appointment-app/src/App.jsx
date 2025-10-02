@@ -135,7 +135,7 @@ const App = () => {
         {menuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-4 py-6 space-y-4">
-              <a href="#home" className="block text-gray-700 hover:text-purple-600 font-medium">Home</a>
+              <a href="#home" className="px-4 py-6 space-y-4">Home</a>
               <a href="#doctors" className="block text-gray-700 hover:text-purple-600 font-medium">Doctors</a>
               <a href="#appointments" className="block text-gray-700 hover:text-purple-600 font-medium">Appointments</a>
               <a href="#about" className="block text-gray-700 hover:text-purple-600 font-medium">About</a>
