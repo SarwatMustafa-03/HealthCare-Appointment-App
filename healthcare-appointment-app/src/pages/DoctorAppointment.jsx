@@ -1,24 +1,36 @@
-import React from 'react'
+import React from 'react';
+import { FaCheck } from 'react-icons/fa';
 
-const DoctorAppointment = () => {
+const AppointmentSummary = ({ selectedDoctor, selectedDate, selectedTime, currentMonth }) => {
   return (
-            
-                <section id='appointments' className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
-                    <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Schedule Appointment</h2>
-                    <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl p-6 mb-8 flex flex-col md:flex-row items-center gap-4">
-                        <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-4xl">
-                            {selectedDoctor.icon}
-                        </div>
-                        <div className="text-center md:text-left">
-                            <h3 className="text-2xl font-bold mb-1">{selectedDoctor.id}</h3>
-                            <h4 className="text-lg opacity-90 mb-2">{selectedDoctor.specialty}</h4>
-                            <h4 className="flex items-center gap-2 opacity-90 justify-center md:justify-start"><FaMapMarkerAlt/>{selectedDoctor.location}</h4>
-                        </div>
-                    </div>
-    
-                </section>
-    
-  )
-}
+    <div className="bg-purple-50 border-2 border-purple-600 rounded-xl p-4 sm:p-6">
+      <h3 className="text-xl sm:text-2xl font-bold text-gray-800 text-center mb-4 sm:mb-6">Appointment Summary</h3>
+      <div className="bg-white rounded-lg p-4 sm:p-6 mb-4 sm:mb-6 space-y-2 sm:space-y-3">
+        <p className="flex justify-between border-b border-gray-200 pb-2 sm:pb-3">
+          <strong className="text-gray-700 text-sm sm:text-base">Doctor:</strong>
+          <span className="text-gray-900 text-sm sm:text-base text-right">{selectedDoctor.name}</span>
+        </p>
+        <p className="flex justify-between border-b border-gray-200 pb-2 sm:pb-3">
+          <strong className="text-gray-700 text-sm sm:text-base">Date:</strong>
+          <span className="text-gray-900 text-sm sm:text-base text-right">
+            {currentMonth.toLocaleString('default', { month: 'long' })} {selectedDate}, {currentMonth.getFullYear()}
+          </span>
+        </p>
+        <p className="flex justify-between border-b border-gray-200 pb-2 sm:pb-3">
+          <strong className="text-gray-700 text-sm sm:text-base">Time:</strong>
+          <span className="text-gray-900 text-sm sm:text-base text-right">{selectedTime}</span>
+        </p>
+        <p className="flex justify-between">
+          <strong className="text-gray-700 text-sm sm:text-base">Location:</strong>
+          <span className="text-gray-900 text-sm sm:text-base text-right">{selectedDoctor.location}</span>
+        </p>
+      </div>
+      <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 sm:py-4 rounded-lg text-base sm:text-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition">
+        <FaCheck className="text-sm sm:text-base" />
+        Confirmed Appointment
+      </button>
+    </div>
+  );
+};
 
-export default DoctorAppointment
+export default AppointmentSummary;
