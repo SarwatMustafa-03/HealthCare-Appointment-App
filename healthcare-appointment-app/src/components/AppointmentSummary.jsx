@@ -27,7 +27,7 @@ const AppointmentSummary = ({ selectedDoctor, selectedDate, selectedTime, curren
       </div>
       <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition">
         <FaCheck />
-        Confirm Appointment
+        Confirmed Appointment
       </button>
     </div>
   );
