@@ -69,6 +69,7 @@ const doctors = [
     icon: <FaBone />,
     available: true
   },
+  
   {
     id: 6,
     name: "Dr. Robert Taylor",
